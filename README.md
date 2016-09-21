@@ -4,7 +4,7 @@
 
 Submitted by: **Trung**
 
-Time spent: **24** hours spent in total
+Time spent: **36** hours spent in total
 
 ## User Stories
 
@@ -36,6 +36,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
+- [ ] It took time to create the icon for the the app using Sketch. This is the first time I use Sketch, so I have to search a lot on the Internet and Youtube.
 
 ## License
 
