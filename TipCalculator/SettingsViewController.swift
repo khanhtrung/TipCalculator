@@ -66,10 +66,10 @@ class SettingsViewController: UIViewController {
                 //Once the label is completely invisible, set the text and fade it back in
                 if self.colorSwitch.isOn {
                     Style.themeLight()
-                    self.ColorThemeLabel.text = "Light"
+                    self.ColorThemeLabel.text = Style.THEME_LIGHT
                 } else {
                     Style.themeDark()
-                    self.ColorThemeLabel.text = "Dark"
+                    self.ColorThemeLabel.text = Style.THEME_DARK
                 }
                 
                 Style.saveTheme(themeName: self.ColorThemeLabel.text!)
@@ -104,12 +104,12 @@ class SettingsViewController: UIViewController {
     
     func setupThemeSwitch(){
         if let defaultThemeName = Settings.GetDefaultTheme(){
-            if defaultThemeName == "Light" {
-                self.ColorThemeLabel.text = "Light"
+            if defaultThemeName == Style.THEME_LIGHT {
+                self.ColorThemeLabel.text = Style.THEME_LIGHT
                 Style.themeLight()
                 colorSwitch.setOn(true, animated: true)
             }else{
-                self.ColorThemeLabel.text = "Dark"
+                self.ColorThemeLabel.text = Style.THEME_DARK
                 Style.themeDark()
                 colorSwitch.setOn(false, animated: false)
             }

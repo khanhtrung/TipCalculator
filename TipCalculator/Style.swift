@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 
-private let theme_LIGHT  = "Light"
-private let theme_DARK   = "Dark"
+
 
 struct Style{
+    
+    static let THEME_LIGHT  = "Light"
+    static let THEME_DARK   = "Dark"
     
     static var sectionHeaderTitleFont = UIFont(name: "Helvetica-Bold", size: 20)
     static var sectionHeaderTitleColor = UIColor.white
@@ -29,15 +31,15 @@ struct Style{
     static let dark_ViewBackgroundColor = UIColor.init(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
     static let dark_BackgroundColor = UIColor.init(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
     
-    static let availableThemes = [theme_LIGHT, theme_DARK]
+    static let availableThemes = [THEME_LIGHT, THEME_DARK]
     
     static func loadTheme(){
         if let name = Settings.GetDefaultTheme(){
             // Select the Theme
-            if name == theme_LIGHT  { themeLight()	}
-            if name == theme_DARK   { themeDark()	}
+            if name == THEME_LIGHT  { themeLight()	}
+            if name == THEME_DARK   { themeDark()	}
         }else{
-            Settings.SetDefaultTheme(themeName: theme_LIGHT)
+            Settings.SetDefaultTheme(themeName: THEME_LIGHT)
             themeLight()
         }
     }

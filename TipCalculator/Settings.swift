@@ -8,10 +8,13 @@
 
 import Foundation
 
+private let defaultPercentArray:[Int] = [10, 15, 20]
 private let defaultPercentIndexKey  = "TipCalculator_DefaultPercentageIndex"
 private let defaultPercentArrayKey  = "TipCalculator_DefaultPercentageArray"
 private let defaultThemeKey         = "TipCalculator_DefaultThemeKey"
-private let defaultPercentArray:[Int] = [10, 15, 20]
+private let defaultBillTimeKey      = "TipCalculator_DefaultBillTimeKey"
+private let defaultBillAmtKey       = "TipCalculator_DefaultBillAmtKey"
+
 
 struct Settings {
     
@@ -62,4 +65,30 @@ struct Settings {
         UserDefaults.standard.set(themeName, forKey: defaultThemeKey)
     }
     
+    
+    static func GetDefaultBillTime() -> NSDate{
+        if let time = UserDefaults.standard.object(forKey: defaultBillTimeKey) as? NSDate{
+            return time
+        }
+        else
+        {return NSDate() }
+
+    }
+    
+    static func SetDefaultBillTime(billTime: NSDate){
+        UserDefaults.standard.set(billTime, forKey: defaultBillTimeKey)
+    }
+    
+    static func GetDefaultBillAmount()-> Double {
+        let billTime = GetDefaultBillTime()
+        if (NSDate.timeIntervalSinceReferenceDate - billTime.timeIntervalSinceReferenceDate < 10*60 ){
+            return UserDefaults.standard.double(forKey: defaultBillAmtKey)
+        }
+        return 0
+    }
+    
+    static func SetDefaultBillAmount(billAmount: Double){
+        SetDefaultBillTime(billTime: NSDate())
+        UserDefaults.standard.set(billAmount, forKey: defaultBillAmtKey)
+    }
 }
