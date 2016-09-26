@@ -71,10 +71,12 @@ class TipViewController: UIViewController {
 
         tipLabel.text = formatter.string(from: NSNumber(value: tipCalc.TipAmount))
         totalLabel.text = formatter.string(from: NSNumber(value: tipCalc.Total))
+        
+        Settings.SetDefaultBillAmount(billAmount: tipCalc.Bill)
     }
     
     @IBAction func billTextFieldEditingDidEnd(_ sender: AnyObject) {
-        Settings.SetDefaultBillAmount(billAmount: tipCalc.Bill)
+        //Settings.SetDefaultBillAmount(billAmount: tipCalc.Bill)
     }
     
     func setupSegmentedControl(_ control: UISegmentedControl){
