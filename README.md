@@ -10,22 +10,22 @@ Time spent: **45** hours spent in total
 
 The following **required** functionality is complete:
 
-* [ ] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
-* [ ] Settings page to change the default tip percentage.
+* [x] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
+* [x] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
-* [ ] UI animations.
-* [ ] The keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
-* [ ] Remember the bill amount across app restarts. (If you return 10 minutes later, it defaults to blank.)
-* [ ] Use locale specific currency and currency thousands separator.
+* [x] UI animations. (Theme name when that theme being changed)
+* [x] The keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Remember the bill amount across app restarts. (If you return 10 minutes later, it defaults to blank.)
+* [x] Use locale specific currency and currency thousands separator.
 
 The following **additional** features are implemented:
-- [ ] Prevent autorotate screen.
-- [ ] Settings page: User can change three default tip percentage values depending on preference.
-- [ ] Settings page: Remembering three default tip percentage values across app restarts.
-- [ ] Settings page: Remembering default selected tip percentage value across app restarts.
-- [ ] Settings page: Having light/dark color theme.
-- [ ] Settings page: Remembering default color theme across app restarts.
+- [x] Prevent autorotate screen.
+- [x] Settings page: User can change three default tip percentage values depending on preference.
+- [x] Settings page: Remembering three default tip percentage values across app restarts.
+- [x] Settings page: Remembering default selected tip percentage value across app restarts.
+- [x] Settings page: Having light/dark color theme. (Just for Settings page. I haven't finished this feature for the main page)
+- [x] Settings page: Remembering default color theme across app restarts.
 
 ## Video Walkthrough 
 
@@ -38,7 +38,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
-- [ ] It took time to create the icon for the the app using Sketch. This is the first time I use Sketch, so I have to search a lot on the Internet and Youtube.
+- [x] It took time to create the icon for the the app using Sketch. This is the first time I use Sketch, so I have to search a lot on the Internet and Youtube.
 
 ## License
 
