@@ -35,9 +35,12 @@ Here's a walkthrough of implemented user stories:
 
 
 Locale currency:
+
 <img src='https://github.com/khanhtrung/TipCalculator/blob/master/TipCalculator_Currency.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+
 Theme color:
+
 <img src='https://github.com/khanhtrung/TipCalculator/blob/master/TipCalculator_Theme.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
