@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UFt-is-TZS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="$0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ys7-os-6LL">
@@ -105,6 +105,7 @@
                         <outlet property="billTextField" destination="Ys7-os-6LL" id="SX0-KD-uCq"/>
                         <outlet property="tipControl" destination="SqM-2U-5v2" id="5aP-Rm-tXt"/>
                         <outlet property="tipLabel" destination="K4p-W6-2gV" id="cKp-LJ-rDp"/>
+                        <outlet property="total" destination="fo2-hH-yQa" id="4hM-Xc-bFL"/>
                         <outlet property="totalLabel" destination="mph-mj-hDC" id="xgn-h0-3sh"/>
                     </connections>
                 </viewController>
@@ -126,7 +127,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WT1-EP-QoQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XVP-Yi-kOS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VFl-fI-zmJ">
@@ -167,17 +168,18 @@
                                             <action selector="selectDefaultValue:" destination="HQ3-BQ-YJk" eventType="valueChanged" id="vQE-hh-090"/>
                                         </connections>
                                     </segmentedControl>
-                                    <stepper opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="15" minimumValue="5" maximumValue="50" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="enQ-Eb-LXv">
+                                    <stepper opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="20" maximumValue="100" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="enQ-Eb-LXv">
                                         <frame key="frameInset" minX="113" minY="54" width="94" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="stepperValueChanged:" destination="HQ3-BQ-YJk" eventType="valueChanged" id="Drx-vo-047"/>
                                         </connections>
                                     </stepper>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="10" maximumValue="50" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="fVi-eY-fG2">
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="100" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="fVi-eY-fG2">
                                         <frame key="frameInset" minX="9.5" minY="54" width="94" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
+                                            <action selector="stepperEditingChanged:" destination="HQ3-BQ-YJk" eventType="editingChanged" id="hc6-hk-Wau"/>
                                             <action selector="stepperValueChanged:" destination="HQ3-BQ-YJk" eventType="valueChanged" id="SyK-cB-619"/>
                                         </connections>
                                     </stepper>
@@ -186,7 +188,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <stepper opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="20" minimumValue="10" maximumValue="50" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="O7O-CR-1IS">
+                                    <stepper opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="75" maximumValue="100" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="O7O-CR-1IS">
                                         <frame key="frameInset" minX="215" minY="54" width="94" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
@@ -215,12 +217,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="NGV-Cm-epS"/>
                     <connections>
-                        <outlet property="ColorThemeLabel" destination="KxK-Ga-FXT" id="9vw-mt-5oz"/>
+                        <outlet property="ColorLabel" destination="KxK-Ga-FXT" id="Rl3-sl-8vC"/>
+                        <outlet property="ColorThemeNameLabel" destination="djb-Y3-UOv" id="uGz-KK-Asj"/>
                         <outlet property="ColorView" destination="VFl-fI-zmJ" id="7Nu-g0-Cbj"/>
                         <outlet property="DefaultLabel" destination="m4B-kf-cyY" id="EPd-Ff-ngc"/>
+                        <outlet property="DefaultView" destination="RmR-CE-TbJ" id="NZj-Br-Nxb"/>
                         <outlet property="ViewSplitter" destination="y2l-ej-2ez" id="aFs-yl-4No"/>
                         <outlet property="colorSwitch" destination="FPm-aW-nKT" id="nKs-Go-hcH"/>
-                        <outlet property="colorThemeLabel" destination="djb-Y3-UOv" id="wq8-O6-4it"/>
                         <outlet property="defaultTipControl" destination="PAH-yj-blR" id="KSF-Y5-xhQ"/>
                         <outlet property="stepper0" destination="fVi-eY-fG2" id="vDT-aC-y5D"/>
                         <outlet property="stepper1" destination="enQ-Eb-LXv" id="pKP-Ve-Crb"/>
