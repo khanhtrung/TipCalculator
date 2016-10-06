@@ -4,7 +4,7 @@
 
 Submitted by: **Trung**
 
-Time spent: **45** hours spent in total
+Time spent: **46** hours spent in total
 
 ## User Stories
 
@@ -17,14 +17,14 @@ The following **optional** features are implemented:
 * [x] UI animations. (Theme name when that theme being changed)
 * [x] The keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 * [x] Remember the bill amount across app restarts. (If you return 10 minutes later, it defaults to blank.)
-* [x] Use locale specific currency and currency thousands separator.
+* [x] Use locale specific currency and currency thousands separator. (base on device's Region)
 
 The following **additional** features are implemented:
 - [x] Prevent autorotate screen.
 - [x] Settings page: User can change three default tip percentage values depending on preference.
 - [x] Settings page: Remembering three default tip percentage values across app restarts.
 - [x] Settings page: Remembering default selected tip percentage value across app restarts.
-- [x] Settings page: Having light/dark color theme. (Just for Settings page. I haven't finished this feature for the main page)
+- [x] Settings page: Having light/dark color theme.
 - [x] Settings page: Remembering default color theme across app restarts.
 
 ## Video Walkthrough 
@@ -33,12 +33,20 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://github.com/khanhtrung/TipCalculator/blob/master/TipCalculator.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+
+Locale currency:
+<img src='https://github.com/khanhtrung/TipCalculator/blob/master/TipCalculator_Currency.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Theme color:
+<img src='https://github.com/khanhtrung/TipCalculator/blob/master/TipCalculator_Theme.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
-- [x] It took time to create the icon for the the app using Sketch. This is the first time I use Sketch, so I have to search a lot on the Internet and Youtube.
+- It took time to create the icon for the the app using Sketch. This is the first time I use Sketch, so I have to search a lot on the Internet and Youtube.
+- On the settings page, haven't add validate code: 'first value' < 'second value' < 'third value'.
 
 ## License
 
